@@ -871,7 +871,8 @@ export default class VideoPlayer extends Component {
                     source={ require( './assets/img/top-vignette.png' ) }
                     style={[ styles.controls.column ]}
                     imageStyle={[ styles.controls.vignette ]}>
-                    <View style={ styles.controls.topControlGroup }>
+                        
+                    <View style={[ styles.controls.topControlGroup, this.props.topGroupStyles ]}>
                         { backControl }
                         <View style={ styles.controls.pullRight }>
                             { volumeControl }
@@ -963,7 +964,8 @@ export default class VideoPlayer extends Component {
                     { seekbarControl }
                     <View style={[
                         styles.controls.row,
-                        styles.controls.bottomControlGroup
+                        styles.controls.bottomControlGroup,
+                        this.props.bottomGroupStyles
                     ]}>
                         { playPauseControl }
                         { this.renderTitle() }
